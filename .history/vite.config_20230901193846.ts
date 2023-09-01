@@ -54,7 +54,7 @@ export default defineConfig({
     renderer(),
     AutoImport({
       imports: [
-        VueRouterAutoImports
+        "VueRouterAutoImports"
       ],
       resolvers: [ElementPlusResolver()],
     }),

@@ -29,18 +29,14 @@
       "vitest",
       "vite/client",
       "vue/ref-macros",
-      "element-plus/global",
+      "vite-plugin-pages/client",
       "vite-plugin-pages/client",
       "vite-plugin-vue-component-preview/client",
       "vite-plugin-vue-layouts/client",
       "vite-plugin-pwa/client",
+      "element-plus/global",
       "unplugin-vue-macros/macros-global"
-    ],
-    "paths": {
-      "~/*": [
-        "src/*"
-      ]
-    }
+    ]
   },
   "vueCompilerOptions": {
     "plugins": [
@@ -53,14 +49,16 @@
       "@vue-macros/volar/jsx-directive"
     ]
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "electron"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "cypress"
   ]
 }

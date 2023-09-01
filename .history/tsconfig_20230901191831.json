@@ -37,9 +37,7 @@
       "unplugin-vue-macros/macros-global"
     ],
     "paths": {
-      "~/*": [
-        "src/*"
-      ]
+      "~/*": ["src/*"]
     }
   },
   "vueCompilerOptions": {
@@ -53,14 +51,16 @@
       "@vue-macros/volar/jsx-directive"
     ]
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "electron"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "cypress"
   ]
 }

@@ -9,9 +9,8 @@ import VueJsx from '@vitejs/plugin-vue-jsx'
 import VueMacros from 'unplugin-vue-macros/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import ElementPlus from 'unplugin-element-plus/vite'
+import ElementPlus  from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -29,8 +28,6 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    Pages(),
-    Layouts(),
     VueMacros({
       plugins: {
         vue: Vue(),
@@ -53,9 +50,6 @@ export default defineConfig({
     ]),
     renderer(),
     AutoImport({
-      imports: [
-        VueRouterAutoImports
-      ],
       resolvers: [ElementPlusResolver()],
     }),
     Components({

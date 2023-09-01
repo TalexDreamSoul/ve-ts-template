@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "module": "ESNext",
     "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
     "lib": [
+      "ES2020",
       "DOM",
-      "ESNEXT"
+      "DOM.Iterable"
     ],
     "skipLibCheck": true,
-    "esModuleInterop": true,
     /* Bundler mode */
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -20,27 +20,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strictNullChecks": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     /* Type checking */
     "types": [
-      "vitest",
-      "vite/client",
-      "vue/ref-macros",
       "element-plus/global",
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-component-preview/client",
-      "vite-plugin-vue-layouts/client",
-      "vite-plugin-pwa/client",
       "unplugin-vue-macros/macros-global"
-    ],
-    "paths": {
-      "~/*": [
-        "src/*"
-      ]
-    }
+    ]
   },
   "vueCompilerOptions": {
     "plugins": [
@@ -53,14 +38,16 @@
       "@vue-macros/volar/jsx-directive"
     ]
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "electron"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "cypress"
   ]
 }
